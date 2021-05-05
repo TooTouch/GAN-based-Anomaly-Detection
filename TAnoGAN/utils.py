@@ -76,7 +76,7 @@ def version_build(logdir: str, is_train: bool, resume: int):
 
     """
     if not os.path.isdir(logdir):
-        os.mkdir(logdir)
+        os.makedirs(logdir)
 
     if is_train:
         version = len(os.listdir(logdir))
@@ -86,7 +86,7 @@ def version_build(logdir: str, is_train: bool, resume: int):
     logdir = os.path.join(logdir, f'version{version}')
 
     if is_train:
-        os.mkdir(logdir)
+        os.makedirs(logdir)
 
     return logdir
 
